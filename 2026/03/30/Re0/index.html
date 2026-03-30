@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="ch_zn">
+<head>
+    <meta charset="utf-8" />
+    <title>Re0 | Animation</title>
+    <meta name="author" content="1cesugar" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar1.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ANIMATION</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ANIMATION</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Re0</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/3/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/animate/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                animate
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/animate/" style="color: #00bcd4">
+                    animate
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Re0/" style="color: #ffa2c4">
+                    Re0
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="第一季"><a href="#第一季" class="headerlink" title="第一季"></a>第一季</h3><p>二刷完了re0第一季（看的新编集）<span id="more"></span><br>有点小小睡不着了<br>首先我想聊聊动画本身<br>原版的第一季作为我的“二次元白月光”在我心中的地位自然是不言而喻的。这是我当年的入二次元作（开启了我的追番生涯）也是我当年的入站作（b站）同时也是我心中绝对的NO.1<br>但是这次重新看了新编集后我感觉微调以后确实要比原来更加优秀了（一集50分钟真爽吧）包括一些暗幕的删除（原版最大的槽点）和一些地方的镜头优化都是挺不错的<br>剧情我不想多聊了反正我每周二看完躺在床上都是满头大汗的（）一些很神的桥段我会记得一辈子的还有oped真的是神真的是神<br>然后说说其他部分<br>作为b站最火的番之一吧re0确实吸引了许许多多的观众，也包括我在内。我现在看番是不喜欢开弹幕的，但是我以前是喜欢开的。re0的弹幕与评论很好的反映了b站用户素质的下降，我就这么说了。虽然不可否认也许几年前我也是什么铁血cp党，但是现在回过头看又有了不一样的体验吧<br>还是不喜欢看到总有人吵来吵去的，希望都能好好地欣赏着一份佳作，珍视这一次难得的体验吧。<br>重新寻找当年的感受，无意中又发现了许多的惊喜，也是挺有趣的一件事啊。时光在不断向前，但正是这么一部部动画还留存着我过去的惊喜与感动，点开一集，是在回忆，亦是在创造新的回忆。<br>谢谢你</p>
+<h3 id="第二季"><a href="#第二季" class="headerlink" title="第二季"></a>第二季</h3><h4 id="EP23"><a href="#EP23" class="headerlink" title="EP23"></a>EP23</h4><p>23集真的神回<br>前半集加菲和肠姐的打戏看爽了<br>简单穿插了一小段肠姐的回忆对梅莉的照顾的细节的描写，寥寥数笔就让猎肠者的形象立体起来。<br>后半集更是拉姆的主场<br>一个执迷于过去、将灵魂留在过去、一切行动都遵循着预言书、不惜一切代价也要复活自己深爱着的“老师”的彻头彻尾的疯子，自以为是地谋划着一切，却无论如何都没有预料到自己会被一个本以为会恨着自己的鬼族少女表白。</p>
+<p><strong>“到底有谁会相信这种廉价的感情！”</strong></p>
+<p>他怒吼道<br>400年来对自己深爱之人的思念<br>与希望自己所爱之人能从妄执之中解脱的那份心意<br>一份阴阳两隔、可能永远无法再见的爱<br>与一份可能永远也无法获得回报的爱<br>罗兹的疯狂、拉姆的告白<br>两份不同的爱，分量却同样沉重<br>结尾书落入火海时骡子的那副表情与灰白色的记忆切回，插入村川梨衣（拉姆cv）的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV125411w7Fk/?spm_id_from=333.337.search-card.all.click&vd_source=c4f5e9c410a93251cac4120dc33807cc">特殊ed</a>，将情绪的渲染推到高潮。此时画面切至黑屏，电影般的滚动字幕结尾配上继续播放着的ed，将方才的情感体验无限拉长，再拉长……<br>在我看来这集也是整个第二季，乃至一整个作品范围里最优秀的之一，也是我最喜欢的之一。<br>说实话，很难用语言表达出我昨晚看完这一集心中的那份苦涩与感动（这段字也是我想了好久才硬挤出来的）。我想只有真正看过，这份感情才能真真切切地传达到：</p>
+<p><strong>“</strong><br><strong>重复了那么多遍</strong><br><strong>有过那么多的接触</strong><br><strong>拉姆依然无法让您察觉到真正心意</strong><br><strong>要是拉姆能一心想着为同族报仇</strong><br><strong>化身为被憎恨折磨的恶鬼</strong><br><strong>那该有多好</strong><br><strong>只是做一个纯粹的复仇恶鬼</strong><br><strong>胸口就不会这么痛了</strong><br><strong>可是</strong><br><strong>拉姆……</strong><br><strong>深爱着罗兹瓦尔大人”</strong><br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8Thf6"><img src="https://img.wjwj.top/2026/03/30/c9ee6ff918b08b48daf4651fdff4cbda.jpg" alt="psc (18)"></a><br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8TdFJ"><img src="https://img.wjwj.top/2026/03/30/7e8f50463de9fd01fcef61be896d5b4d.jpg" alt="psc (19)"></a></p>
+<h4 id="EP24"><a href="#EP24" class="headerlink" title="EP24"></a>EP24</h4><p>24集稳定发挥，文戏神回<br>首先是从“我就是那个人”到“选择我吧”<br>仅仅因为“母亲大人”的一句话，独守禁书库400年等待着也许永远也无法到达这里的“那个人”的到来，本该能够指引未来的书却是一片空白</p>
+<p><strong>“</strong><br><strong>我才不是你的什么’那个人’，不管几次我的答案都一样”</strong></p>
+<p>即使大火已经将书库外的宅邸吞没，486依然坚持着自己的回答</p>
+<p><strong>“</strong><br><strong>选择我吧</strong><br><strong>我就是我 菜月昴</strong><br><strong>把这400年你对根本没见过的家伙</strong><br><strong>的单相思给忘了吧”</strong></p>
+<p>即使罗兹一开始就让他这么做，486从始至终都没有承认过自己就是“那个人”，费劲千辛万苦，就是为了让回答从“我就是那个人”变成“选择我吧”。486告诉贝蒂，你有着爱别人的权利与自由。<br>从接受契约的安排，等待爱着自己的那个人的到来，到由自己选择自己的未来；从被动的爱到主动的爱，碧翠丝终于能够依照自己的心意继续活下去<br>这个由被动到主动的转变，选择的权利从486到贝蒂的转变，就是这集最让我喜欢的地方。剧中的女角色不必依赖男主的“救赎”而活，不再是为了男主而存在，她们同样有着选择自己幸福的权利。她们受到了足够的尊重，不再是作为工具人而是能够<br>活得丰富且精彩。这也是我最喜欢的486的人格魅力之一<br>最后结尾ed<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1NK4y1Q7h7/?spm_id_from=333.337.search-card.all.click&vd_source=c4f5e9c410a93251cac4120dc33807cc">《believe in you》</a>的插入我也挺喜欢的（特别是主歌向副歌切换的时候那个停顿时候的白屏场景切换）<br>然后就是所谓“寿命论”了<br>这个也是一个常被谈起的主题<br>我也不想过多赘述了<br>但是我突然联想到了《葬送的芙莉莲》<br>面对一个我那么喜欢的作品我当时竟然想不出如何以文字形式来表达我内心的感想</p>
+<p><strong>“</strong><br><strong>对于能永远活下去的你</strong><br><strong>和我度过的时间 或许不过是一瞬间罢了</strong><br><strong>那么就将我的一瞬间</strong><br><strong>烙印在你的灵魂上吧</strong><br><strong>菜月昴这个男人</strong><br><strong>是即便在永远的时间当中</strong><br><strong>也绝不会褪色的</strong><br><strong>鲜明又强烈的男人啊”</strong></p>
+<p>这便是我想表达的东西<br>再合适不过了<br>也算是对一个遗憾的补全吧<br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8TNIA"><img src="https://img.wjwj.top/2026/03/30/ccd1fdfca7d8469127b1f7bb3addedde.jpg" alt="psc (20)"></a><br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8Twlx"><img src="https://img.wjwj.top/2026/03/30/466a269987efd230f297ded484b95073.jpg" alt="psc (21)"></a><br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8TlhR"><img src="https://img.wjwj.top/2026/03/30/2d34837157166261064d183f8c32d3b0.jpg" alt="psc (22)"></a><br><a target="_blank" rel="noopener" href="https://www.imgcc.cloud/image/d8TOou"><img src="https://img.wjwj.top/2026/03/30/f06d2b68777727800244bc4b8ec2d011.jpg" alt="psc (23)"></a></p>
+<h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><p>二刷完了re0第二季<br>至此，这项高三开始构思，大一开始实施的二刷计划终于迎来了终点（欢呼）<br>好了认真说<br>严格意义来说re0的第一季是启动了至今为止的看番生涯，那么re0的第二季则是启动了至今为止的追番生涯，因为当时初三我是切切实实地在追的。我依然记得当时每周周日早上起来用电视上的b站追re0第二季的日子</p>
+<p>首先我完全不认为第二季做的不如第一季<br>相较第一季的打戏见长，第二季圣域篇则是以文戏见长，我完全不觉得re0第二季的画面穷。我找不到第二个作品，能把所谓“站桩对话”做到这个级别，做得这么有感染力。而且这种回归最简单的文戏展开，做出来的感染力完全不比一些炫分镜炫作画的桥段来得差。一整季25集的时间，圣域中的所有人都发生了改变获得了成长，一些在前期剧情稍显扁平的角色也在剧情塑造下变得立体起来，将制作组的功力体现得淋漓尽致。其中最明显的就是艾米莉亚，通过自己的努力通过了试炼，面对了过去，真正从前期有点“花瓶”的形象成长转化为了一个独立、勇敢、坚强的女主角形象，我也真真切切地感受到了这个角色的真正魅力所在。而且第二季的名场面数量与冲击力也完全不输第一季，和第一季一起是我心目中当之无愧的NO.1，没有任何番能够超越。</p>
+<p>然后讲讲剧情方面<br>说实话re0圣域篇的追番体验可能并没有那么好，因为每一集的信息量巨大加上一些伏笔，导致有时候我感觉不记得以前的剧情，再加上上下半季分割放送，导致有些剧情我都忘得差不多了。但是这次二刷真的是给我了完全不同的体验（也可能是当时年龄有点小）。无论从剧情体验还是情感体验re0第二季都是定格的存在，二刷的时候对于一些剧情细节和人物形象包括一些隐藏的伏笔我都有了一些惊喜的新发现与新体验，而且整个二刷下来我真的有种在看一部新番的感觉，简直不要太爽啊！<br>还有一点我想特别讲一下就是人物的塑造，在re0中的人物都是鲜活立体的，从不存在所谓的“脸谱化角色”。例如反派的塑造，没有洗白，没有圣母，看完剧情后真的很难对这些人有着太多的恨，因为他们本身也非常的可怜可悲（而且与一般俗套的“反派立体背景塑造”不同，re0的反派塑造是融入到剧情中的，丝毫不显生硬）</p>
+<p>然后是制作方面<br>我真心佩服re0第二季的制作组，在当时疫情的情况下，re0制作组拿出了最大的对观众的诚意与对作品的热爱，制作出了这样一部可以用“完美”来评价的作品。首先是作画方面，即使放到现在来看re0无论第一季还是第二季的作画都是完全没有问题的，而且不会喧宾夺主，re0的作画真真正正是服务于剧情的。第二季的oped选曲完全不逊第一季（特别是ed全是神曲）更不用说每一集接近30分钟的时长，而且一整个第二季基本上就没有几集是oped同时存在的，用oped的时长最大程度的加长了一集的时间，而且制作方还买下了广告时间，这是绝无仅有的。而第二季，便是这样一部我能真正感受到创作者热情的作品。制作组的热情加上优秀的原作，最终成就了这样一部非凡的作品</p>
+<p>这样一部优秀的作品值得我的热爱<br>我自己是一个对多刷完全没什么兴趣的人<br>但是re0值得<br>我想这辈子大概率不会再有任何一部作品能得到我的这种待遇了<br>这是<br><strong>“从零开始”</strong><br>亦是我青春的开始<br>谢谢你</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 Animation
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;1cesugar
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
